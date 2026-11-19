@@ -1,3 +1,3 @@
 {
-  sshaccess = 2000;
+  sshaccess = 3000;
 }
