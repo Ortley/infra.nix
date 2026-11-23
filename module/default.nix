@@ -2,6 +2,8 @@
 {
   imports = [
     ./user
+    ./nix.nix
+    ./sops.nix
   ];
 
   config.networking.hostName = hostname;

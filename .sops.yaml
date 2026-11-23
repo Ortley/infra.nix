@@ -1,0 +1,9 @@
+keys:
+  - &mipha age1yehdx8a5n3edrgcnu6d5med338pc2h7xe4n9sculq3hwd5h7m5kq9zw5gn
+  - &mipha_ortley age1e335fc7r8ynuk9zkvscx8dfgmypvec6lxup50cl5v6vgygcehp6qm9s3hv
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+      - age:
+          - *mipha
+          - *mipha_ortley
