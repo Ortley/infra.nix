@@ -12,6 +12,10 @@
       url = "github:Mic92/sops-nix"; 
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: 
@@ -20,8 +24,8 @@
 
     system = "x86_64-linux";
     hosts = [ 
-      "mipha" "daruk" "revali" "urbosa" 
-      "folkistan" "browntown" 
+      "mipha" "daruk"# "revali" "urbosa" 
+      "browntown" #"folkistan"  
     ];
 
     userModules = 
@@ -37,6 +41,7 @@
         ./module/default.nix
         ./host/${hostname}/configuration.nix
         ./host/${hostname}/hardware-configuration.nix
+        inputs.disko.nixosModules.disko
         inputs.sops-nix.nixosModules.sops
         inputs.home-manager.nixosModules.default {
           home-manager = {
